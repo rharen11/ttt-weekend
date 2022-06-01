@@ -137,7 +137,7 @@ let board, turn, winner
 
 
 /*------------------------ Cached Element References ------------------------*/
-const squareEls = document.getElementsByClassName('board')
+const squareEls = document.querySelectorAll("div.square")
 const messageEl = document.getElementById('message')
 
 
@@ -158,10 +158,18 @@ function init(){
 }
 
 function render(){
-  board.array.forEach(element, idx => {
-    idx = null
-  });
-  if(winner === null){
-    if turn === true ? `It is ${turn} now` : `It is ${turn*1} now`
-  }
+    console.log(squareEls)
+    // let sqIndex
+    // squareEls.forEach(function(value, i){
+    //     sqIndex = value.i
+    // })
+//   if(winner === null){
+//     turn === true ? `It is ${turn} now` : `It is ${turn*1} now`
+//   } else if (winner === 'T'){
+//       return "Its a tie!"
+//   } else{
+//       return `Congrats player ${turn}, you won!`
+//   }
 }
+
+render()
