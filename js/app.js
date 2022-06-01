@@ -133,7 +133,8 @@
 
 
 /*---------------------------- Variables (state) ----------------------------*/
-let board, turn, winner 
+let board = [] 
+let turn, winner 
 
 
 /*------------------------ Cached Element References ------------------------*/
@@ -150,7 +151,7 @@ const messageEl = document.getElementById('message')
 /*-------------------------------- Functions --------------------------------*/
 
 function init(){
-  board = null
+  board = [null, 1, null, null, null, null, null, null, null]
   turn = 1
   winner = null
   render()
@@ -158,11 +159,14 @@ function init(){
 }
 
 function render(){
-    let sqIndex
     
-    squareEls.forEach(function(square, index){
-        return sqIndex = index
+    board.forEach(square => {
+        square = squareEls[board.indexOf(square)]
+        square   
     })
+
+
+
   if(winner === null){
     turn === true ? `It is ${turn} now` : `It is ${turn*1} now`
   } else if (winner === 'T'){
@@ -172,4 +176,4 @@ function render(){
   }
 }
 
-render()
+init()
