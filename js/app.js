@@ -129,7 +129,16 @@
   //    should call the `init` function you created in 3.
 
 /*-------------------------------- Constants --------------------------------*/
-
+const winningCombos = [
+    [0, 1, 2], 
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 4, 8],
+    [2, 4, 6],
+    [0, 3, 6],
+    [2, 5, 8],
+    [6, 7, 8]
+]
 
 
 /*---------------------------- Variables (state) ----------------------------*/
@@ -140,18 +149,21 @@ let turn, winner
 /*------------------------ Cached Element References ------------------------*/
 const squareEls = document.querySelectorAll("div.square")
 const messageEl = document.getElementById('message')
+const sqIdx = document.getElementById()
 
 
 
 
 /*----------------------------- Event Listeners -----------------------------*/
-
+squareEls.forEach(function(square){
+    square.addEventListener('click', handleClick)
+})
 
 
 /*-------------------------------- Functions --------------------------------*/
 
 function init(){
-  board = [null, 1, null, null, null, null, null, null, null]
+  board = [null, null, null, null, null, null, null, null, null]
   turn = 1
   winner = null
   render()
@@ -159,21 +171,28 @@ function init(){
 }
 
 function render(){
-    
-    board.forEach(square => {
-        square = squareEls[board.indexOf(square)]
-        square   
+
+    board.forEach((square, index) => {
+        if(square === 1){
+            squareEls[index].textContent = 'X'
+            } else if(square === -1){
+            squareEls[index].textContent = 'O'
+            }else{
+            squareEls[index].textContent = ''
+        }
     })
 
-
-
-  if(winner === null){
-    turn === true ? `It is ${turn} now` : `It is ${turn*1} now`
-  } else if (winner === 'T'){
-      return "Its a tie!"
-  } else{
-      return `Congrats player ${turn}, you won!`
+        
+        if(winner = null){
+    turn === 1 ? `It is ${turn} now` : `It is ${turn*1} now`
+        } else if (winner === 'T'){
+            return "Its a tie!"
+        } else{
+         return `Congrats player ${turn}, you won!`
   }
 }
 
-init()
+function handleClick(evt){
+    
+}
+
