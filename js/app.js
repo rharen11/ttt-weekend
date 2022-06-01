@@ -149,7 +149,6 @@ let turn, winner
 /*------------------------ Cached Element References ------------------------*/
 const squareEls = document.querySelectorAll("div.square")
 const messageEl = document.getElementById('message')
-// const sqIdx = document.getElementById()
 const wholeBoard = document.querySelector('section')
 
 
@@ -191,7 +190,24 @@ function render(){
   }
 }
 
-function handleClick(evt){
-    console.log('it works')
+function handleClick(event){
+    const sqIdx = parseInt(event.target.id.slice(2))
+    if(board === sqIdx){
+        return
+    }else if(winner !== null){
+        return
+    }
+    turn = board.splice(sqIdx, 1, sqIdx)
+    turn = turn*-1
+    if(winner === true){
+        getWinner()
+    }
+
 }
+
+function getWinner(){
+    for()
+}
+
+
 
