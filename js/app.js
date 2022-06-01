@@ -158,18 +158,18 @@ function init(){
 }
 
 function render(){
-    console.log(squareEls)
-    // let sqIndex
-    // squareEls.forEach(function(value, i){
-    //     sqIndex = value.i
-    // })
-//   if(winner === null){
-//     turn === true ? `It is ${turn} now` : `It is ${turn*1} now`
-//   } else if (winner === 'T'){
-//       return "Its a tie!"
-//   } else{
-//       return `Congrats player ${turn}, you won!`
-//   }
+    let sqIndex
+    
+    squareEls.forEach(function(square, index){
+        return sqIndex = index
+    })
+  if(winner === null){
+    turn === true ? `It is ${turn} now` : `It is ${turn*1} now`
+  } else if (winner === 'T'){
+      return "Its a tie!"
+  } else{
+      return `Congrats player ${turn}, you won!`
+  }
 }
 
 render()
