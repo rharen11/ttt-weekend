@@ -149,15 +149,14 @@ let turn, winner
 /*------------------------ Cached Element References ------------------------*/
 const squareEls = document.querySelectorAll("div.square")
 const messageEl = document.getElementById('message')
-const sqIdx = document.getElementById()
+// const sqIdx = document.getElementById()
+const wholeBoard = document.querySelector('section')
 
 
 
 
 /*----------------------------- Event Listeners -----------------------------*/
-squareEls.forEach(function(square){
-    square.addEventListener('click', handleClick)
-})
+wholeBoard.addEventListener('click', handleClick)
 
 
 /*-------------------------------- Functions --------------------------------*/
@@ -193,6 +192,6 @@ function render(){
 }
 
 function handleClick(evt){
-    
+    console.log('it works')
 }
 
