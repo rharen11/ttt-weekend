@@ -206,7 +206,16 @@ function handleClick(event){
 }
 
 function getWinner(){
-    for()
+    winningCombos.forEach(element){
+        let total = 0
+        total += element
+        return Math.abs(total)
+    }
+    if(winningCombos === 3){
+        winner === winningCombos[0]
+    }else if(//no more nulls in board){
+        winner === 'T'
+    }
 }
 
 
