@@ -170,19 +170,27 @@ function init(){
 
 function render(){
 
-    board.forEach((square, index) => {
-        if(square === 1){
-            squareEls[index].textContent = 'X'
-            } else if(square === -1){
-            squareEls[index].textContent = 'O'
-            }else{
-            squareEls[index].textContent = ''
-        }
-    })
+    // board.forEach(function(square, index) {
+    //     if(square[index] === 1){
+    //         squareEls[index].textContent = 'X'
+    //         } else if(square[index] === -1){
+    //         squareEls[index].textContent = 'O'
+    //         }
+    //   }
+    // )
 
-        
-        if(winner = null){
-    turn === 1 ? `It is ${turn} now` : `It is ${turn*1} now`
+    board.forEach(function(square, index){
+      if(square === 1){
+        squareEls[index].textContent ='X'
+      }else if(board[index] === -1){
+        squareEls[index].textContent = 'O'
+      }else{
+        squareEls.textContent = ''
+      }
+    })
+    
+      if(winner === null){
+    turn === 1 ? messageEl.textContent = `Its your turn player 1` : messageEl.textContent = `It is player 2 turn now`
         } else if (winner === 'T'){
             return "Its a tie!"
         } else{
@@ -190,33 +198,46 @@ function render(){
   }
 }
 
+
 function handleClick(event){
     const sqIdx = parseInt(event.target.id.slice(2))
-    if(board === sqIdx){
-        return
-    }else if(winner !== null){
+    console.log(sqIdx)
+    
+    if(board[sqIdx] === !null){
         return
     }
-    turn = board.splice(sqIdx, 1, sqIdx)
-    turn = turn*-1
-    if(winner === true){
-        getWinner()
+    if(winner !== null){
+      return
     }
+    
+    board[sqIdx] = turn
+    console.log(board)
+    turn = turn*(-1)
+    getWinner()
+    render()
 
 }
 
 function getWinner(){
-    winningCombos.forEach(element){
-        let total = 0
-        total += element
-        return Math.abs(total)
+
+  winningCombos.forEach(function(element, idx){
+    let total = 0
+    element.forEach(function(item, idx){
+    total += item[idx]
+    total =  Math.abs(total)
+
+    if(total === 3){
+      return winner === turn
+    } else if(total !== 3){
+      return winner === 'T'
+    }else {
+      return winner === null
     }
-    if(winningCombos === 3){
-        winner === winningCombos[0]
-    }else if(//no more nulls in board){
-        winner === 'T'
-    }
+  })
+
+})
+
+  render ()
 }
 
-
-
+init()
