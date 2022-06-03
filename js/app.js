@@ -192,9 +192,9 @@ function render(){
       if(winner === null){
     turn === 1 ? messageEl.textContent = `Its your turn player 1` : messageEl.textContent = `It is player 2 turn now`
         } else if (winner === 'T'){
-            return "Its a tie!"
+            return messageEl.textContent = "Its a tie!"
         } else{
-         return `Congrats player ${turn}, you won!`
+         return messageEl.textContent = `Congrats player ${turn}, you won!`
   }
 }
 
@@ -220,23 +220,15 @@ function handleClick(event){
 
 function getWinner(){
 
-  winningCombos.forEach(function(element, idx){
-    let total = 0
-    element.forEach(function(item, idx){
-    total += item[idx]
-    total =  Math.abs(total)
-
-    if(total === 3){
-      return winner === turn
-    } else if(total !== 3){
-      return winner === 'T'
-    }else {
-      return winner === null
-    }
+  winningCombos.forEach(function(combo){
+   if(board[combo[0]] + board[combo[1]] + board[combo[2]] === 3){
+     winner = 1
+   }else if(board[combo[0]] + board[combo[1]] + board[combo[2]] === -3){
+     winner = turn *(-1)
+   }else if(!board.includes(null)){
+     winner = 'T'
+   }
   })
-
-})
-
   render ()
 }
 
