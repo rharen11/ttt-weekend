@@ -150,12 +150,14 @@ let turn, winner
 const squareEls = document.querySelectorAll("div.square")
 const messageEl = document.getElementById('message')
 const wholeBoard = document.querySelector('section')
+const resetBtn = document.getElementById('reset-button')
 
 
 
 
 /*----------------------------- Event Listeners -----------------------------*/
 wholeBoard.addEventListener('click', handleClick)
+resetBtn.addEventListener('click', init)
 
 
 /*-------------------------------- Functions --------------------------------*/
@@ -194,7 +196,7 @@ function render(){
         } else if (winner === 'T'){
             return messageEl.textContent = "Its a tie!"
         } else{
-         return messageEl.textContent = `Congrats player ${turn}, you won!`
+         return messageEl.textContent = `Congrats player ${winner}, you won!`
   }
 }
 
