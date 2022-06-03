@@ -150,7 +150,7 @@ let turn, winner
 const squareEls = document.querySelectorAll("div.square")
 const messageEl = document.getElementById('message')
 const wholeBoard = document.querySelector('section')
-const resetBtn = document.getElementById('reset-button')
+const resetBtn = document.querySelector('.reset-button')
 
 
 
@@ -171,23 +171,15 @@ function init(){
 }
 
 function render(){
-
-    // board.forEach(function(square, index) {
-    //     if(square[index] === 1){
-    //         squareEls[index].textContent = 'X'
-    //         } else if(square[index] === -1){
-    //         squareEls[index].textContent = 'O'
-    //         }
-    //   }
-    // )
+  //if something isnt showing up on page its prob render
 
     board.forEach(function(square, index){
       if(square === 1){
         squareEls[index].textContent ='X'
-      }else if(board[index] === -1){
-        squareEls[index].textContent = 'O'
+      }else if(square === -1){
+        squareEls[index].textContent = "0"
       }else{
-        squareEls.textContent = ''
+        squareEls[index].textContent = ''
       }
     })
     
@@ -203,7 +195,7 @@ function render(){
 
 function handleClick(event){
     const sqIdx = parseInt(event.target.id.slice(2))
-    console.log(sqIdx)
+    //console.log(sqIdx)
     
     if(board[sqIdx] === !null){
         return
