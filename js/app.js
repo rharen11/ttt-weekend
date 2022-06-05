@@ -137,7 +137,8 @@ const winningCombos = [
     [2, 4, 6],
     [0, 3, 6],
     [2, 5, 8],
-    [6, 7, 8]
+    [6, 7, 8],
+    [1, 4, 7]
 ]
 
 
@@ -197,7 +198,7 @@ function handleClick(event){
     const sqIdx = parseInt(event.target.id.slice(2))
     //console.log(sqIdx)
     
-    if(board[sqIdx] === !null){
+    if(board[sqIdx] !== null){
         return
     }
     if(winner !== null){
@@ -205,7 +206,6 @@ function handleClick(event){
     }
     
     board[sqIdx] = turn
-    console.log(board)
     turn = turn*(-1)
     getWinner()
     render()
