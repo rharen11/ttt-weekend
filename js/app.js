@@ -184,13 +184,23 @@ function render(){
       }
     })
     
-      if(winner === null){
-    turn === 1 ? messageEl.textContent = `Its your turn player 1` : messageEl.textContent = `It is player 2 turn now`
+  //     if(winner === null){
+  //   turn === 1 ? messageEl.textContent = `It's your turn!` : messageEl.textContent = `It's the machine's turn`
+  //       } else if (winner === 'T'){
+  //           return messageEl.textContent = `It's a tie!`
+  //       } else{
+  //        return messageEl.textContent = `Congrats player ${winner}, you won!`
+  // }
+
+  if(winner === null){
+    turn === 1 ? messageEl.textContent = `It's your turn!` : messageEl.textContent = `It's the machine's turn`
         } else if (winner === 'T'){
-            return messageEl.textContent = "Its a tie!"
-        } else{
-         return messageEl.textContent = `Congrats player ${winner}, you won!`
-  }
+            return messageEl.textContent = `It's a tie!`
+        } else if (winner === 1){
+         return messageEl.textContent = `Congrats, you beat the machine!`
+        } else {
+          return messageEl.textContent = `Sorry, the machine beat you!`
+        }
 }
 
 
