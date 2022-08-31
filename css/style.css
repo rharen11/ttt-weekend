@@ -37,6 +37,12 @@ div {
   background-color: #73ACBE;
 }
 
+div img{
+  object-fit: cover;
+  width: 100%;
+  position: relative;
+}
+
 #message{
   font-size: 40px;
 }

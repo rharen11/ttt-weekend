@@ -5,3 +5,4 @@
 
 ## Credits
 * [Jakub Novacek](https://www.instagram.com/jakubnovacek2022/) for background photograph
+* Icons sourced from [SVG Repo](https://www.svgrepo.com/)

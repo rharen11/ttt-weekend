@@ -177,8 +177,10 @@ function render(){
     board.forEach(function(square, index){
       if(square === 1){
         squareEls[index].textContent ='X'
+        squareEls[index].innerHTML = '<img id="rocket" src="./assets/saturn.svg" width="30px">'
       }else if(square === -1){
         squareEls[index].textContent = "0"
+        squareEls[index].innerHTML = '<img id="rocket" src="./assets/earth.svg" width="25px">'
       }else{
         squareEls[index].textContent = ''
       }
