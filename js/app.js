@@ -195,7 +195,7 @@ function render(){
   if(winner === null){
     turn === 1 ? messageEl.textContent = `It's your turn!` : messageEl.textContent = `It's the machine's turn`
         } else if (winner === 'T'){
-            return messageEl.textContent = `It's a tie!`
+            return messageEl.textContent = `All tied up!`
         } else if (winner === 1){
          return messageEl.textContent = `Congrats, you beat the machine!`
         } else {
