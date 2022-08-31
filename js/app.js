@@ -193,13 +193,13 @@ function render(){
   // }
 
   if(winner === null){
-    turn === 1 ? messageEl.textContent = `It's your turn!` : messageEl.textContent = `It's the machine's turn`
+    turn === 1 ? messageEl.textContent = `Player 1, you're up!` : messageEl.textContent = `Player 2, your turn!`
         } else if (winner === 'T'){
             return messageEl.textContent = `All tied up!`
         } else if (winner === 1){
-         return messageEl.textContent = `Congrats, you beat the machine!`
+         return messageEl.textContent = `Player 1 wins!`
         } else {
-          return messageEl.textContent = `Sorry, the machine beat you!`
+          return messageEl.textContent = `Player 2 wins!`
         }
 }
 

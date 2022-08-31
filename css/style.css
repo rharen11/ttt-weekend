@@ -1,17 +1,19 @@
 body {
-    background-color: gray;
-    background-image: url(/assets/space.jpg);
-    /* background-size: cover; */
-	/* Use a system font, if none are available use an available sans-sarif   font */
-	font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-		Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  background-color: gray;
+  background-image: url(/assets/space.jpg);
+	font-family: 'Play', sans-serif;
 	margin: 0;
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: white;
+  color: #C1FAFF;
+}
+
+.title{
+  color: aquamarine;
+  font-size: 60px;
 }
 
 section.board {
@@ -31,10 +33,26 @@ div {
 
 .square{
   color: white;
-  border: solid white;
-  background-color: navy;
+  border: solid #E6F4F1;
+  background-color: #73ACBE;
+}
+
+#message{
+  font-size: 40px;
 }
 
 .button-styling{
   margin: 20px;
+  background-color: #73ACBE;
+  size: 40px;
+}
+
+.reset-button{
+  background-color: #73ACBE;
+  color: white;
+  font-size: 30px;
+}
+
+.btn{
+  size: 500px;
 }
